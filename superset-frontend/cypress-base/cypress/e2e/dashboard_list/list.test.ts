@@ -43,8 +43,15 @@ function openMenu() {
 function confirmDelete() {
   // Wait for modal dialog to be present and visible
   cy.get('[role="dialog"][aria-modal="true"]').should('be.visible');
-  cy.getBySel('delete-modal-input').should('be.visible').clear().type('DELETE');
-  cy.getBySel('modal-confirm-button').should('be.visible').click();
+
+  // Handle the delete input field
+  cy.getBySel('delete-modal-input').should('be.visible');
+  cy.getBySel('delete-modal-input').clear();
+  cy.getBySel('delete-modal-input').type('DELETE');
+
+  // Handle the confirm button
+  cy.getBySel('modal-confirm-button').should('be.visible');
+  cy.getBySel('modal-confirm-button').click();
 }
 
 describe('Dashboards list', () => {
