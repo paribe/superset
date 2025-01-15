@@ -17,7 +17,8 @@
  * under the License.
  */
 import { useState } from 'react';
-import { Modal, Tooltip } from 'antd';
+import { Tooltip } from 'src/components/Tooltip';
+import Modal from 'src/components/Modal';
 import { ExclamationCircleOutlined, WarningOutlined } from '@ant-design/icons';
 import Alert from 'src/components/Alert';
 import { t, useTheme } from '@superset-ui/core';
