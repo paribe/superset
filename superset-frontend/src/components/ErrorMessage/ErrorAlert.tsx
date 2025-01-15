@@ -127,7 +127,7 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({
         </Tooltip>
         <Modal
           title={errorType}
-          visible={showModal}
+          open={showModal}
           onCancel={() => setShowModal(false)}
           footer={null}
         >
