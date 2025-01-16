@@ -26,7 +26,7 @@ import { ChartSource } from 'src/types/ChartSource';
 export type Props = {
   chartId: string;
   error?: SupersetError;
-  subtitle: JSX.Element;
+  subtitle: React.ReactNode;
   link?: string;
   source: ChartSource;
   stackTrace?: string;

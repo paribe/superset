@@ -101,7 +101,7 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({
     </div>
   );
 
-  const renderAlert = closable => (
+  const renderAlert = (closable: boolean) => (
     <Alert
       description={renderDescription()}
       type={type}
@@ -127,8 +127,8 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({
         </Tooltip>
         <Modal
           title={errorType}
-          open={showModal}
-          onCancel={() => setShowModal(false)}
+          show={showModal}
+          onHide={() => setShowModal(false)}
           footer={null}
         >
           {renderAlert(false)}

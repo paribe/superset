@@ -84,7 +84,7 @@ export default function ErrorMessageWithStackTrace({
 
   return (
     <ErrorAlert
-      type="warning"
+      type="error"
       errorType={title}
       message={subtitle}
       description={description}
