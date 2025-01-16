@@ -245,7 +245,13 @@ class Chart extends PureComponent<ChartProps, {}> {
       height,
       datasetsStatus,
     } = this.props;
-    const error = queryResponse?.errors?.[0];
+    let error = queryResponse?.error;
+    if (error === undefined) {
+      error = {
+        error: t('Network error'),
+        message: t('Check your network connection'),
+      };
+    }
     const message = chartAlert || queryResponse?.message;
 
     // if datasource is still loading, don't render JS errors
@@ -273,8 +279,7 @@ class Chart extends PureComponent<ChartProps, {}> {
         key={chartId}
         chartId={chartId}
         error={error}
-        subtitle={<MonospaceDiv>{message}</MonospaceDiv>}
-        copyText={message}
+        subtitle={message}
         link={queryResponse ? queryResponse.link : undefined}
         source={dashboardId ? ChartSource.Dashboard : ChartSource.Explore}
         stackTrace={chartStackTrace}
