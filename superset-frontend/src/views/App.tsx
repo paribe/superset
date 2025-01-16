@@ -84,9 +84,11 @@ const App = () => (
           <Route path={path} key={path}>
             <Suspense fallback={<Fallback />}>
               <Layout.Content>
-                <ErrorBoundary>
-                  <Component user={bootstrapData.user} {...props} />
-                </ErrorBoundary>
+                <div style={{ padding: '16px' }}>
+                  <ErrorBoundary>
+                    <Component user={bootstrapData.user} {...props} />
+                  </ErrorBoundary>
+                </div>
               </Layout.Content>
             </Suspense>
           </Route>
