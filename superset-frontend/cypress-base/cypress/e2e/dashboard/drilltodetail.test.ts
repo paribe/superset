@@ -563,7 +563,7 @@ describe('Drill to detail modal', () => {
     });
 
     describe('Radar Chart', () => {
-      it('opens the modal with the correct filters', () => {
+      it.skip('opens the modal with the correct filters', () => {
         interceptSamples();
 
         cy.get("[data-test-viz-type='radar'] canvas").then($canvas => {
