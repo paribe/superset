@@ -26,7 +26,7 @@ export default eyesPlugin(
   defineConfig({
     chromeWebSecurity: false,
     defaultCommandTimeout: 8000,
-    numTestsKeptInMemory: 5,
+    numTestsKeptInMemory: 3,
     // Disabled after realizing this MESSES UP rison encoding in intricate ways
     experimentalFetchPolyfill: false,
     experimentalMemoryManagement: true,
