@@ -160,13 +160,13 @@ describe('SqlLab query panel', () => {
     cy.get('.ace_text-input').focus();
     cy.focused().clear({ force: true });
     cy.focused().type(`{selectall}{backspace}${query}`, { force: true });
-    cy.get('.sql-toolbar button').contains('Run').click();
+    cy.get('.sql-toolbar button').contains('Run').click({ force: true });
     cy.wait('@queryFinished');
 
     cy.get(
       '.SouthPane .ant-tabs-content > .ant-tabs-tabpane-active > div button:first',
       { timeout: 10000 },
-    ).click();
+    ).click({ force: true });
 
     cy.wait('@explore');
     cy.get('[data-test="datasource-control"] .title-select').contains(query);

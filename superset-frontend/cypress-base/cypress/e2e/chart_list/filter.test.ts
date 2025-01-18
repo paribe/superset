@@ -32,12 +32,12 @@ describe('Charts filters', () => {
 
   it('should allow filtering by "Owner"', () => {
     setFilter('Owner', 'alpha user');
-    setFilter('Owner', 'admin user');
+    setFilter('Owner', 'Superset Admin');
   });
 
   it('should allow filtering by "Modified by" correctly', () => {
     setFilter('Modified by', 'alpha user');
-    setFilter('Modified by', 'admin user');
+    setFilter('Modified by', 'Superset Admin');
   });
 
   it('should allow filtering by "Type" correctly', () => {

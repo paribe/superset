@@ -119,7 +119,7 @@ function testTimeChart(vizType: string) {
 describe('Drill to detail modal', () => {
   beforeEach(() => {
     closeModal();
-    cy.viewport(1280, 2000);
+    cy.viewport(1280, 3000);
   });
 
   describe('Tier 1 charts', () => {
