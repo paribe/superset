@@ -27,9 +27,7 @@ test('renders with default props', async () => {
   render(<Alert message="Message" />);
 
   expect(screen.getByRole('alert')).toHaveTextContent('Message');
-  expect(
-    await screen.getByRole('img', { name: 'info-circle' }),
-  ).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'info-circle' })).toBeInTheDocument();
 });
 
 test('renders message for each alert type', () => {
