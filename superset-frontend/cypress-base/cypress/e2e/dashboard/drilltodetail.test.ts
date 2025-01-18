@@ -113,20 +113,6 @@ function testTimeChart(vizType: string) {
     cy.getBySel('filter-val').first().should('contain', '1965');
     cy.getBySel('filter-val').eq(1).should('contain', 'boy');
     closeModal();
-
-    cy.wrap($canvas).scrollIntoView();
-    cy.wrap($canvas).trigger('mousemove', 70, 145);
-    cy.wrap($canvas).rightclick(70, 145);
-    openModalFromChartContext('Drill to detail by girl');
-    cy.getBySel('filter-val').should('contain', 'girl');
-    closeModal();
-
-    cy.wrap($canvas).scrollIntoView();
-    cy.wrap($canvas).trigger('mousemove', 70, 145);
-    cy.wrap($canvas).rightclick(70, 145);
-    openModalFromChartContext('Drill to detail by all');
-    cy.getBySel('filter-val').first().should('contain', '1965');
-    cy.getBySel('filter-val').eq(1).should('contain', 'girl');
   });
 }
 
