@@ -390,6 +390,7 @@ const CustomModal = ({
       mask={shouldShowMask}
       draggable={draggable}
       resizable={resizable}
+      motion={false}
       destroyOnClose={destroyOnClose}
       {...rest}
     >

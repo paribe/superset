@@ -35,6 +35,7 @@ function openModalFromMenu(chartType: string) {
     `[data-test-viz-type='${chartType}'] [aria-label='More Options']`,
   ).click();
   cy.get('.ant-dropdown')
+    .should('be.visible')
     .not('.ant-dropdown-hidden')
     .find("[role='menu'] [role='menuitem']")
     .eq(5)
@@ -48,6 +49,7 @@ function openModalFromChartContext(targetMenuItem: string) {
 
   if (targetMenuItem.startsWith('Drill to detail by')) {
     cy.get('.ant-dropdown')
+      .should('be.visible')
       .not('.ant-dropdown-hidden')
       .should('be.visible')
       .first()
@@ -63,6 +65,7 @@ function openModalFromChartContext(targetMenuItem: string) {
       .click();
   } else {
     cy.get('.ant-dropdown')
+      .should('be.visible')
       .not('.ant-dropdown-hidden')
       .first()
       .find("[role='menu'] [role='menuitem']")
