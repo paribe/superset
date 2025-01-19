@@ -117,7 +117,7 @@ function testTimeChart(vizType: string) {
   });
 }
 
-describe.skip('Drill to detail modal', () => {
+describe('Drill to detail modal', () => {
   beforeEach(() => {
     closeModal();
     cy.viewport(1280, 4000);
@@ -332,7 +332,7 @@ describe.skip('Drill to detail modal', () => {
       });
     });
 
-    describe('Bar Chart', () => {
+    describe.skip('Bar Chart', () => {
       it('opens the modal with the correct filters', () => {
         interceptSamples();
 
@@ -370,19 +370,19 @@ describe.skip('Drill to detail modal', () => {
       });
     });
 
-    describe('Area Chart', () => {
+    describe.skip('Area Chart', () => {
       it('opens the modal with the correct filters', () => {
         testTimeChart('echarts_area');
       });
     });
 
-    describe('Scatter Chart', () => {
+    describe.skip('Scatter Chart', () => {
       it('opens the modal with the correct filters', () => {
         testTimeChart('echarts_timeseries_scatter');
       });
     });
 
-    describe('Pie', () => {
+    describe.skip('Pie', () => {
       it('opens the modal with the correct filters', () => {
         interceptSamples();
 
@@ -404,7 +404,7 @@ describe.skip('Drill to detail modal', () => {
       });
     });
 
-    describe('World Map', () => {
+    describe.skip('World Map', () => {
       it('opens the modal with the correct filters', () => {
         interceptSamples();
 
