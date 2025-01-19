@@ -431,21 +431,23 @@ describe('Drill to detail modal', () => {
     });
 
     describe('Modal actions', () => {
-      it('clears filters', () => {
+      it.only('clears filters', () => {
         interceptSamples();
 
         // opens the modal by clicking on the box on the chart
         cy.get("[data-test-viz-type='box_plot'] canvas").then($canvas => {
           const canvasWidth = $canvas.width() || 0;
           const canvasHeight = $canvas.height() || 0;
-          const canvasCenterX = canvasWidth / 3;
-          const canvasCenterY = (canvasHeight * 5) / 6;
+          console.log(canvasWidth, canvasHeight);
+          const canvasCenterX = (canvasWidth * 4) / 10;
+          const canvasCenterY = (canvasHeight * 12) / 10;
 
           cy.wrap($canvas).scrollIntoView();
           cy.wrap($canvas).rightclick(canvasCenterX, canvasCenterY, {
             force: true,
           });
 
+          cy.wait(500);
           openModalFromChartContext('Drill to detail by boy');
 
           // checking the filter
