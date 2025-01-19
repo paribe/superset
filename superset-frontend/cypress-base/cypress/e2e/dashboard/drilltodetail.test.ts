@@ -48,31 +48,41 @@ function openModalFromChartContext(targetMenuItem: string) {
   interceptSamples();
 
   if (targetMenuItem.startsWith('Drill to detail by')) {
+    // First chain: Get dropdown and ensure visibility
+    cy.get('.ant-dropdown').should('be.visible').not('.ant-dropdown-hidden');
+
+    // Second chain: Handle drill to detail submenu
     cy.get('.ant-dropdown')
-      .should('be.visible')
-      .not('.ant-dropdown-hidden')
-      .should('be.visible')
       .first()
       .find("[role='menu'] [role='menuitem'] [title='Drill to detail by']")
       .trigger('mouseover');
+
+    // Third chain: Select from submenu
     cy.get('[data-test="drill-to-detail-by-submenu"]')
       .should('be.visible')
-      .not('.ant-dropdown-menu-hidden [data-test="drill-to-detail-by-submenu"]')
-      .should('be.visible')
+      .not(
+        '.ant-dropdown-menu-hidden [data-test="drill-to-detail-by-submenu"]',
+      );
+
+    cy.get('[data-test="drill-to-detail-by-submenu"]')
       .find('[role="menuitem"]')
       .contains(new RegExp(`^${targetMenuItem}$`))
       .first()
       .click();
   } else {
+    // First chain: Get dropdown and ensure visibility
+    cy.get('.ant-dropdown').should('be.visible').not('.ant-dropdown-hidden');
+
+    // Second chain: Click menu item
     cy.get('.ant-dropdown')
-      .should('be.visible')
-      .not('.ant-dropdown-hidden')
       .first()
       .find("[role='menu'] [role='menuitem']")
       .contains(new RegExp(`^${targetMenuItem}$`))
       .first()
       .click();
   }
+
+  // Verify completion
   cy.getBySel('metadata-bar').should('be.visible');
   cy.wait('@samples');
 }
@@ -179,7 +189,7 @@ describe('Drill to detail modal', () => {
         cy.getBySelLike('Number-modal').find('.virtual-grid').scrollTo(0, 200);
 
         // Commented because it's flaky
-        //cy.get('.virtual-grid').contains('Juan').should('not.be.visible');
+        // cy.get('.virtual-grid').contains('Juan').should('not.be.visible');
 
         cy.get('.ant-pagination-item').eq(0).click();
 
