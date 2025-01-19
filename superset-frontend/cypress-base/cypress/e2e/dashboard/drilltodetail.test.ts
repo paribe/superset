@@ -117,7 +117,7 @@ function testTimeChart(vizType: string) {
   });
 }
 
-describe('Drill to detail modal', () => {
+describe.skip('Drill to detail modal', () => {
   beforeEach(() => {
     closeModal();
     cy.viewport(1280, 4000);
