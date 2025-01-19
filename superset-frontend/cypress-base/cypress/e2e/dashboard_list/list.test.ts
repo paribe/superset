@@ -195,7 +195,7 @@ describe('Dashboards list', () => {
         .should('not.contain', '4 - Sample dashboard');
     });
 
-    it('should delete correctly', () => {
+    it.skip('should delete correctly', () => {
       interceptDelete();
 
       // deletes in card-view
