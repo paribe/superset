@@ -54,7 +54,7 @@ const StyledHeader = styled.header`
         display: none;
       }
       .ant-menu-item-active {
-        background-color: ${theme.colors.grayscale.bgTextActive};
+        background-color: ${theme.colors.grayscale.text};
       }
       .navbar-brand {
         display: flex;
@@ -75,14 +75,14 @@ const StyledHeader = styled.header`
           border-color: transparent;
         }
         &:focus-visible {
-          border-color: ${theme.colors.primary.dark1};
+          border-color: ${theme.colors.primary.textActive};
         }
       }
       .navbar-brand-text {
-        border-left: 1px solid ${theme.colors.grayscale.light2};
-        border-right: 1px solid ${theme.colors.grayscale.light2};
+        border-left: 1px solid ${theme.colors.grayscale.border};
+        border-right: 1px solid ${theme.colors.grayscale.border};
         height: 100%;
-        color: ${theme.colors.grayscale.dark1};
+        color: ${theme.colors.grayscale.text};
         padding-left: ${theme.gridUnit * 4}px;
         padding-right: ${theme.gridUnit * 4}px;
         margin-right: ${theme.gridUnit * 6}px;
@@ -130,15 +130,15 @@ const StyledHeader = styled.header`
         }
         .ant-menu-item-active > a {
           &:hover {
-            color: ${theme.colors.primary.base} !important;
+            color: ${theme.colors.primary.text} !important;
             background-color: transparent !important;
           }
         }
       }
       .ant-menu-item a {
         &:hover {
-          color: ${theme.colors.grayscale.dark1};
-          background-color: ${theme.colors.primary.light5};
+          color: ${theme.colors.gray.textHover};
+          background-color: ${theme.colors.primary.bg};
           border-bottom: none;
           margin: 0;
           &:after {
@@ -174,16 +174,16 @@ const globalStyles = (theme: SupersetTheme) => css`
     }
   }
   .ant-menu-horizontal > .ant-menu-item:has(> .is-active) {
-    color: ${theme.colors.primary.base};
-    border-bottom-color: ${theme.colors.primary.base};
+    color: ${theme.colors.primary.textActive};
+    border-bottom-color: ${theme.colors.primary.textActive};
     & > a {
       color: ${theme.colors.primary.base};
     }
   }
   .ant-menu-vertical > .ant-menu-item:has(> .is-active) {
-    background-color: ${theme.colors.primary.light5};
+    background-color: ${theme.colors.primary.bg};
     & > a {
-      color: ${theme.colors.primary.base};
+      color: ${theme.colors.primary.text};
     }
   }
 `;
